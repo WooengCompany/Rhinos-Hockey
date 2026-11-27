@@ -15,7 +15,9 @@
   <meta property="og:image" content="https://wooengcompany.github.io/Rhinos-Hockey/logo.png">
   <link rel="icon" type="image/png" href="./favicon.png">
   <link rel="stylesheet" href="./style.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"라이노스","description":"라이노스 아이스하키 팀을 소개합니다.","url":"https://wooengcompany.github.io/Rhinos-Hockey/","inLanguage":"ko"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://wooengcompany.github.io/Rhinos-Hockey/#website","name":"라이노스","url":"https://wooengcompany.github.io/Rhinos-Hockey/","inLanguage":"ko"},{"@type":"WebPage","@id":"https://wooengcompany.github.io/Rhinos-Hockey/#webpage","name":"라이노스","description":"라이노스 아이스하키 팀을 소개합니다.","url":"https://wooengcompany.github.io/Rhinos-Hockey/","inLanguage":"ko","isPartOf":{"@id":"https://wooengcompany.github.io/Rhinos-Hockey/#website"}}]}</script>
+  <script type="module" src="./practice-clock.mjs"></script>
+  <script type="module" src="./inquiry-draft.mjs"></script>
 </head>
 <body>
 <div class="site site-rhinos theme-rhinos">
@@ -24,7 +26,7 @@
     <header class="site-header">
       <div class="wrap nav-inner">
         <a class="brand" href="./">
-          <img src="./logo.png" alt="">
+          <img src="./logo.png" width="40" height="40" alt="">
           <span>RHINOS</span>
         </a>
         <nav aria-label="주 메뉴">
@@ -46,33 +48,124 @@
           <a class="button button-outline" href="#join">체험 문의<span class="arrow" aria-hidden="true">↓</span></a>
         </div>
       </div>
-      <div class="team-poster" aria-hidden="true">
-        <div class="poster-detail"></div>
-        <img src="./logo.png" alt="">
+      <div class="team-poster">
+        <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="./ice-texture.webp" aria-hidden="true" tabindex="-1">
+      <source src="./hero.mp4" type="video/mp4">
+    </video>
+        <div class="poster-detail" aria-hidden="true"></div>
+        <img src="./logo.png" width="1145" height="826" alt="" fetchpriority="high">
+        <button type="button" class="video-toggle" aria-pressed="false" hidden>배경 영상 정지</button>
       </div>
     </div>
   </section>
+  <div class="next-practice" data-next-practice="1" hidden>
+    <div class="wrap next-practice-inner">
+      <p class="next-up-label">NEXT ICE</p>
+      <ol></ol>
+      <a class="next-cta" href="#join">체험 문의<span class="arrow" aria-hidden="true">↓</span></a>
+    </div>
+  </div>
+      <section class="wrap team-stats" aria-labelledby="stats-title">
+    <p class="chapter">01 · 한눈에</p>
+    <h2 class="visually-hidden" id="stats-title">라이노스 한눈에 보기</h2>
+    <dl class="stat-cards">
+      <div>
+        <dt>주간 운동</dt>
+        <dd><span class="stat-value"><small>주</small>2<small>회</small></span><span class="stat-note">토요일</span></dd>
+      </div><div>
+        <dt>운동 시간</dt>
+        <dd><span class="stat-value"><small>회당</small>90<small>분</small></span><span class="stat-note">시작부터 종료까지</span></dd>
+      </div><div>
+        <dt>링크장</dt>
+        <dd><span class="stat-value">1<small>곳</small></span><span class="stat-note">분당</span></dd>
+      </div><div>
+        <dt>대상</dt>
+        <dd><span class="stat-value">유소년</span><span class="stat-note">유소년팀</span></dd>
+      </div>
+    </dl>
+  </section>
       <div class="wrap section team-details">
         <section id="schedule" aria-labelledby="schedule-title">
+          <p class="chapter">02 · 운동 일정</p>
           <h2 id="schedule-title">운동 일정</h2>
-          <ul class="schedule-list"><li class="schedule-row">
-      <span class="schedule-day">토요일<small>챌린지</small></span>
+          <ul class="schedule-list"><li class="schedule-row" data-day="토요일" data-region="분당" data-team="라이노스 챌린지" data-place="분당 아이스아레나">
+      <span class="schedule-day"><b class="schedule-code" aria-hidden="true">SAT</b>토요일<small>챌린지</small></span>
       <span class="schedule-time"><time datetime="14:00">14:00</time><span aria-hidden="true">–</span><span class="visually-hidden">부터 </span><time datetime="15:30">15:30</time></span>
-      <span class="schedule-place">분당 아이스아레나</span>
-    </li><li class="schedule-row">
-      <span class="schedule-day">토요일<small>비기너</small></span>
+      <a class="schedule-place" href="https://map.naver.com/p/search/%EB%B6%84%EB%8B%B9%20%EC%95%84%EC%9D%B4%EC%8A%A4%EC%95%84%EB%A0%88%EB%82%98">분당 아이스아레나<span class="visually-hidden"> 지도 보기</span></a>
+    </li><li class="schedule-row" data-day="토요일" data-region="분당" data-team="라이노스 비기너" data-place="분당 아이스아레나">
+      <span class="schedule-day"><b class="schedule-code" aria-hidden="true">SAT</b>토요일<small>비기너</small></span>
       <span class="schedule-time"><time datetime="15:30">15:30</time><span aria-hidden="true">–</span><span class="visually-hidden">부터 </span><time datetime="17:00">17:00</time></span>
-      <span class="schedule-place">분당 아이스아레나</span>
+      <a class="schedule-place" href="https://map.naver.com/p/search/%EB%B6%84%EB%8B%B9%20%EC%95%84%EC%9D%B4%EC%8A%A4%EC%95%84%EB%A0%88%EB%82%98">분당 아이스아레나<span class="visually-hidden"> 지도 보기</span></a>
     </li></ul>
+          <div class="visit-note"><h3>방문 전에 확인해 주세요</h3><p>비기너와 챌린지 중 어느 그룹이 맞는지 궁금하다면, 자녀의 나이와 스케이팅 경험을 알려주세요.</p></div>
         </section>
         <section class="join-panel" id="join" aria-labelledby="join-title">
     <div>
       <h2 id="join-title">체험 문의</h2>
       <p>채팅에서 “라이노스 체험 문의”라고 말씀해 주세요.</p>
+        <details class="inquiry-draft" data-team="라이노스" hidden>
+          <summary>문의 문구 만들기<span class="arrow" aria-hidden="true">↓</span></summary>
+          <p class="draft-help">문구를 복사한 뒤 채팅이나 이메일에서 빈칸을 채워 보내세요.</p>
+          <div class="draft-controls">
+            <label>문의 목적
+              <select name="purpose">
+                <option value="youth">자녀 체험</option>
+                <option value="transfer">팀 이동</option>
+                <option value="watch">훈련 참관</option>
+              </select>
+            </label>
+            <label>희망 일정
+              <select name="session">
+                <option value="">일정 상담</option>
+                <option>토요일 챌린지 14:00–15:30 · 분당 아이스아레나</option><option>토요일 비기너 15:30–17:00 · 분당 아이스아레나</option>
+              </select>
+            </label>
+          </div>
+          <label class="draft-message">보낼 문구<textarea readonly rows="6"></textarea></label>
+          <div class="draft-feedback"><button type="button" class="copy-draft" hidden>문구 복사</button><span role="status"></span></div>
+        </details>
     </div>
     <a class="button " href="https://open.kakao.com/o/sJYblUYi">카카오톡으로 체험 문의<span class="arrow" aria-hidden="true">↗</span></a>
   </section>
       </div>
+      <section class="wrap section learn" aria-labelledby="learn-title">
+    <div class="section-heading">
+      <p class="chapter">03 · 배우는 과정</p>
+      <h2 id="learn-title">스케이트가 처음이어도 괜찮아요</h2>
+      <p>빙판 적응부터 팀 플레이까지 단계를 밟아 가요. 아이마다 속도가 다르니 반과 진도는 팀과 상담해 정하세요.</p>
+    </div>
+    <ol class="learn-steps">
+      <li><span class="learn-step">STEP 1</span><strong>스케이팅</strong><p>빙판에서 균형을 잡고 앞으로 나아가거나 방향을 바꾸고 멈추는 연습입니다.</p></li><li><span class="learn-step">STEP 2</span><strong>퍽과 스틱</strong><p>스틱으로 퍽을 가까이 두고 움직이거나 원하는 방향으로 보내는 기술을 연습합니다.</p></li><li><span class="learn-step">STEP 3</span><strong>패스와 슈팅</strong><p>움직이는 동료에게 퍽을 보내고, 골대를 향해 슛하는 동작입니다.</p></li><li><span class="learn-step">STEP 4</span><strong>팀 플레이</strong><p>퍽을 갖고 있지 않을 때도 어느 위치로 움직이고 동료를 어떻게 도울지 살펴봅니다.</p></li>
+    </ol>
+  </section>
+      <section class="visit-section" aria-labelledby="visit-title">
+        <div class="wrap section">
+          <p class="chapter">04 · 첫 방문</p>
+          <h2 id="visit-title">첫 방문은 이렇게 준비하세요</h2>
+          <ol class="visit-steps">
+            <li><strong>희망 시간 고르기</strong><p>가능한 운동 요일과 링크장을 확인하세요.</p></li>
+            <li><strong>체험 또는 참관 문의</strong><p>현재 하키 경험과 원하는 참여 방식을 알려주세요.</p></li>
+            <li><strong>방문 전 확인</strong><p>참여 날짜, 도착 시간, 비용과 준비물을 안내받고 방문하세요.</p></li>
+          </ol>
+          <a class="text-link" href="#join">체험 문의로 이동<span class="arrow" aria-hidden="true">↑</span></a>
+        </div>
+      </section>
+      <section class="wrap section gear" aria-labelledby="gear-title">
+    <div class="section-heading">
+      <p class="chapter">05 · 장비</p>
+      <h2 id="gear-title">하키 장비 체크리스트</h2>
+      <p>아이스하키 기본 보호 장비입니다. 체험 때 빌릴 수 있는 장비는 팀마다 다르니 구매 전에 문의해 주세요.</p>
+    </div>
+    <ol class="gear-list">
+      <li><strong>헬멧·케이지</strong><span>얼굴을 가리는 케이지가 달린 하키 헬멧</span></li><li><strong>넥가드</strong><span>목을 보호해요. 유소년은 꼭 확인하세요.</span></li><li><strong>숄더패드</strong><span>어깨와 가슴 보호</span></li><li><strong>엘보패드</strong><span>넘어질 때 팔꿈치 보호</span></li><li><strong>하키 장갑</strong><span>스틱을 쥐는 손 보호</span></li><li><strong>하키 팬츠</strong><span>허리와 허벅지 보호</span></li><li><strong>낭심 보호대</strong><span>성별에 맞는 제품으로 준비</span></li><li><strong>정강이 보호대</strong><span>무릎부터 발목까지 보호</span></li><li><strong>하키 스케이트</strong><span>발에 맞는 사이즈와 날 상태 확인</span></li><li><strong>스틱</strong><span>키와 손 방향(레프트·라이트)에 맞게</span></li>
+    </ol>
+  </section>
+      <section class="wrap section faq-section" aria-labelledby="faq-title">
+    <div><p class="chapter">06 · 자주 묻는 질문</p><h2 id="faq-title">자주 묻는 질문</h2></div>
+    <div class="faq-list">
+      <details><summary>자녀가 어느 반에서 시작하면 좋을까요?<span aria-hidden="true"></span></summary><p>자녀의 나이와 스케이트 경험을 알려주세요. 라이노스는 비기너와 챌린지 시간이 따로 있고, SP는 그룹 레슨의 참여 대상과 운영 방식을 문의할 수 있어요.</p></details><details><summary>장비를 먼저 사야 하나요?<span aria-hidden="true"></span></summary><p>구매 전에 체험에 필요한 장비와 대여 가능한 품목을 확인해 보세요. 장비가 있다면 보유한 품목을 알려주면 준비물을 안내받기 쉽습니다.</p></details><details><summary>체험 비용과 준비물은 어디서 확인하나요?<span aria-hidden="true"></span></summary><p>희망 팀 페이지의 문의 채널에서 체험 비용, 장비 대여 여부, 준비물과 도착 시간을 확인해 주세요.</p></details><details><summary>팀에 바로 가입하기 전에 운동을 볼 수 있나요?<span aria-hidden="true"></span></summary><p>체험이나 참관이 가능한 날짜를 팀에 문의해 주세요. 기존 하키 경험과 방문 가능한 요일을 함께 알려주면 이야기를 시작하기 쉽습니다.</p></details>
+    </div>
+  </section>
       <section class="wrap section nearby" aria-labelledby="nearby-title">
         <h2 id="nearby-title">다른 팀 둘러보기</h2>
         <div class="nearby-links">
@@ -84,7 +177,12 @@
             <span><small>아이스하키팀</small><strong>GIRL CRUSH</strong></span><span class="arrow" aria-hidden="true">↗</span>
           </a>
         </div>
+        <div class="team-guide-links">
+          <a class="text-link" href="https://wooengcompany.github.io/Rinkline/#start">처음 시작하기<span class="arrow" aria-hidden="true">↗</span></a><a class="text-link" href="https://wooengcompany.github.io/Rinkline/#youth">자녀 첫 하키<span class="arrow" aria-hidden="true">↗</span></a><a class="text-link" href="https://wooengcompany.github.io/Rinkline/#transfer">팀 옮기기<span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="text-link" href="https://wooengcompany.github.io/Rinkline/#schedule">전체 운동 일정 비교<span class="arrow" aria-hidden="true">↗</span></a>
+        </div>
       </section>
+      <a class="sticky-cta" href="#join">라이노스 체험 문의<span class="arrow" aria-hidden="true">↑</span></a>
     </main>
     
     <footer class="site-footer">
