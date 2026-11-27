@@ -93,7 +93,7 @@ for (const toggle of document.querySelectorAll(".video-toggle")) {
     if (paused) video.pause();
     else video.play().catch(() => {});
     toggle.setAttribute("aria-pressed", String(paused));
-    toggle.textContent = paused ? "배경 영상 재생" : "배경 영상 정지";
+    document.documentElement.classList.toggle("motion-paused", paused);
   };
   setPaused(reduceMotion.matches);
   toggle.addEventListener("click", () => setPaused(!video.paused));
