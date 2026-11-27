@@ -97,6 +97,7 @@ img { display: block; max-width: 100%; height: auto; }
 .section { padding-block: clamp(2.75rem, 6vw, 5.5rem); }
 .section-heading { margin-bottom: 1.45rem; }
 .section-heading p, .join-panel p { margin-top: .55rem; color: var(--muted); line-height: 1.7; }
+.section-heading p, .join-panel p, .hero-description, .schedule-place { word-break: keep-all; overflow-wrap: anywhere; }
 h2 { font-size: clamp(1.55rem, 3.1vw, 2.4rem); line-height: 1.15; letter-spacing: -.055em; }
 
 .visually-hidden {
